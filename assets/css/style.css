@@ -1,0 +1,73 @@
+/* Premium Aesthetics */
+body {
+    background: radial-gradient(circle at top right, #ffffff 0%, #f0f1f1 100%);
+}
+
+h2 {
+    background: linear-gradient(135deg, #000000 0%, #4c4546 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Make car cards extremely premium */
+#inventory a.group {
+    border-radius: 1.25rem !important;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+#inventory a.group:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0,0,0,0.2) !important;
+}
+
+/* Add beautiful hover animations to images */
+#inventory a.group img {
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+#inventory a.group:hover img {
+    transform: scale(1.08) !important;
+}
+
+/* Beautiful filter buttons */
+#inventory button {
+    border-radius: 2rem !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+#inventory button:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+    min-width: max-content;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Staggered Letter Reveal Loader */
+.letter-reveal {
+    opacity: 0.2;
+    animation: flash 1.5s infinite linear;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; text-shadow: 0 0 10px rgba(0,0,0,0.2); }
+}
