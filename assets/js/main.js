@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const priceDisplay = car.requires_contact
                 ? 'Contact Dealer'
-                : '$' + Number(car.price).toLocaleString();
+                : '₦' + Number(car.price).toLocaleString();
 
             const buttonText = car.requires_contact ? 'Contact Us' : 'View Details';
 

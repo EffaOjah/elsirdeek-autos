@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="light">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard - Elsirdeek Autos</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Hanken+Grotesk:wght@300..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Hanken+Grotesk:wght@300..900&display=swap"
+        rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
     <script src="assets/js/tailwind.config.js"></script>
-    
+
     <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
 
     <!-- Navbar -->
@@ -26,7 +31,8 @@
         </button>
         <div id="nav-user-info" class="hidden md:flex items-center space-x-4">
             <span id="user-email" class="text-gray-300 font-sans text-sm"></span>
-            <button id="logout-btn" class="text-white hover:text-gray-300 transition-colors font-sans text-sm underline">Logout</button>
+            <button id="logout-btn"
+                class="text-white hover:text-gray-300 transition-colors font-sans text-sm underline">Logout</button>
         </div>
     </nav>
 
@@ -34,20 +40,27 @@
     <main class="flex-grow flex flex-col p-8 md:p-12 max-w-7xl mx-auto w-full relative">
 
         <!-- LOGIN SECTION -->
-        <div id="login-section" class="m-auto w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col">
+        <div id="login-section"
+            class="m-auto w-full max-w-md bg-white p-8 rounded-2xl shadow-xl border border-gray-100 flex flex-col">
             <h2 class="font-sans text-3xl font-bold mb-6 text-center text-primary">Admin Login</h2>
             <form id="login-form" class="space-y-6">
                 <div>
                     <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Email</label>
-                    <input type="email" id="login-email" required class="w-full border-b border-gray-300 focus:border-black bg-transparent py-3 font-sans text-gray-900 outline-none transition-colors" placeholder="admin@elsirdeek.com">
+                    <input type="email" id="login-email" required
+                        class="w-full border-b border-gray-300 focus:border-black bg-transparent py-3 font-sans text-gray-900 outline-none transition-colors"
+                        placeholder="admin@elsirdeek.com">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Password</label>
-                    <input type="password" id="login-password" required class="w-full border-b border-gray-300 focus:border-black bg-transparent py-3 font-sans text-gray-900 outline-none transition-colors" placeholder="••••••••">
+                    <input type="password" id="login-password" required
+                        class="w-full border-b border-gray-300 focus:border-black bg-transparent py-3 font-sans text-gray-900 outline-none transition-colors"
+                        placeholder="••••••••">
                 </div>
                 <div id="login-error" class="text-red-500 text-sm hidden"></div>
-                <button type="submit" class="w-full bg-primary text-white font-sans text-sm font-semibold py-4 rounded-full hover:bg-black transition-colors shadow-md flex justify-center items-center">
-                    <span id="login-spinner" class="material-symbols-outlined animate-spin hidden mr-2">progress_activity</span>
+                <button type="submit"
+                    class="w-full bg-primary text-white font-sans text-sm font-semibold py-4 rounded-full hover:bg-black transition-colors shadow-md flex justify-center items-center">
+                    <span id="login-spinner"
+                        class="material-symbols-outlined animate-spin hidden mr-2">progress_activity</span>
                     Sign In
                 </button>
             </form>
@@ -60,16 +73,18 @@
                     <h1 class="text-4xl font-sans font-bold text-gray-900">Inventory</h1>
                     <p class="text-gray-500 mt-2">Manage your vehicle listings and hot deals.</p>
                 </div>
-                <button id="add-car-btn" class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-black transition-colors shadow-md flex items-center">
+                <button id="add-car-btn"
+                    class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-black transition-colors shadow-md flex items-center">
                     <span class="material-symbols-outlined mr-2">add</span> Add Vehicle
                 </button>
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                                <div class="overflow-x-auto w-full max-w-[90vw] md:max-w-none">
+                <div class="overflow-x-auto w-full max-w-[90vw] md:max-w-none">
                     <table class="w-full text-left border-collapse">
                         <thead>
-                            <tr class="bg-gray-50 border-b border-gray-200 text-xs uppercase tracking-wider text-gray-500 font-bold">
+                            <tr
+                                class="bg-gray-50 border-b border-gray-200 text-xs uppercase tracking-wider text-gray-500 font-bold">
                                 <th class="p-4">Image</th>
                                 <th class="p-4">Brand / Model</th>
                                 <th class="p-4">Category</th>
@@ -92,30 +107,40 @@
     </main>
 
     <!-- ADD/EDIT CAR MODAL -->
-    <div id="car-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex justify-center items-center p-4">
+    <div id="car-modal"
+        class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex justify-center items-center p-4">
         <div class="bg-white w-full max-w-3xl rounded-3xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden">
             <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50 rounded-t-3xl">
                 <h3 id="modal-title" class="text-2xl font-bold font-sans">Add New Vehicle</h3>
-                <button id="close-modal-btn" class="text-gray-500 hover:text-black transition-colors"><span class="material-symbols-outlined">close</span></button>
+                <button id="close-modal-btn" class="text-gray-500 hover:text-black transition-colors"><span
+                        class="material-symbols-outlined">close</span></button>
             </div>
-            
+
             <div class="p-8 overflow-y-auto flex-grow">
                 <form id="car-form" class="space-y-6">
                     <input type="hidden" id="car-id">
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Brand</label>
-                            <input type="text" id="car-brand" required class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none" placeholder="e.g. Mercedes-Benz">
+                            <label
+                                class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Brand</label>
+                            <input type="text" id="car-brand" required
+                                class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none"
+                                placeholder="e.g. Mercedes-Benz">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Model</label>
-                            <input type="text" id="car-model" required class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none" placeholder="e.g. S 580 4MATIC">
+                            <label
+                                class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Model</label>
+                            <input type="text" id="car-model" required
+                                class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none"
+                                placeholder="e.g. S 580 4MATIC">
                         </div>
-                        
+
                         <div>
-                            <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Category</label>
-                            <select id="car-category" required class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none cursor-pointer">
+                            <label
+                                class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Category</label>
+                            <select id="car-category" required
+                                class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none cursor-pointer">
                                 <option value="SUV">SUV</option>
                                 <option value="Sedan">Sedan</option>
                                 <option value="Electric">Electric</option>
@@ -123,32 +148,42 @@
                                 <option value="Sports">Sports</option>
                             </select>
                         </div>
-                        
+
                         <div>
-                            <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Price ($)</label>
-                            <input type="number" id="car-price" class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none" placeholder="e.g. 150000">
+                            <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Price
+                                (₦)</label>
+                            <input type="number" id="car-price"
+                                class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none"
+                                placeholder="e.g. 150000">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Brief Description</label>
-                        <textarea id="car-description" rows="3" class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none resize-none" placeholder="Short marketing description..."></textarea>
+                        <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-2">Brief
+                            Description</label>
+                        <textarea id="car-description" rows="3"
+                            class="w-full border-b border-gray-300 focus:border-black bg-transparent py-2 outline-none resize-none"
+                            placeholder="Short marketing description..."></textarea>
                     </div>
 
                     <div class="flex items-center space-x-8 pt-4">
                         <label class="flex items-center space-x-3 cursor-pointer">
-                            <input type="checkbox" id="car-contact" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300 focus:ring-primary cursor-pointer">
+                            <input type="checkbox" id="car-contact"
+                                class="form-checkbox h-5 w-5 text-primary rounded border-gray-300 focus:ring-primary cursor-pointer">
                             <span class="text-sm font-semibold text-gray-700">Requires Contact (Hide Price)</span>
                         </label>
                         <label class="flex items-center space-x-3 cursor-pointer">
-                            <input type="checkbox" id="car-hot-deal" class="form-checkbox h-5 w-5 text-primary rounded border-gray-300 focus:ring-primary cursor-pointer">
+                            <input type="checkbox" id="car-hot-deal"
+                                class="form-checkbox h-5 w-5 text-primary rounded border-gray-300 focus:ring-primary cursor-pointer">
                             <span class="text-sm font-semibold text-gray-700">Mark as Hot Deal</span>
                         </label>
                     </div>
 
                     <div class="pt-6 border-t border-gray-100">
-                        <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-4">Vehicle Images (Upload)</label>
-                        <input type="file" id="car-images" multiple accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-black hover:file:bg-gray-200 cursor-pointer">
+                        <label class="block text-xs font-bold text-gray-500 tracking-wider uppercase mb-4">Vehicle
+                            Images (Upload)</label>
+                        <input type="file" id="car-images" multiple accept="image/*"
+                            class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-black hover:file:bg-gray-200 cursor-pointer">
                         <p class="text-xs text-gray-400 mt-2">The first image will be used as the main cover image.</p>
                         <div id="image-preview" class="flex gap-4 mt-4 overflow-x-auto pb-2 hidden"></div>
                     </div>
@@ -156,11 +191,14 @@
                     <div id="form-error" class="text-red-500 text-sm hidden"></div>
                 </form>
             </div>
-            
+
             <div class="p-6 border-t border-gray-100 bg-gray-50 rounded-b-3xl flex justify-end space-x-4">
-                <button type="button" id="cancel-modal-btn" class="px-6 py-2.5 rounded-full text-sm font-semibold text-gray-600 hover:bg-gray-200 transition-colors">Cancel</button>
-                <button type="button" id="save-car-btn" class="bg-primary text-white px-8 py-2.5 rounded-full text-sm font-semibold hover:bg-black transition-colors shadow-md flex items-center">
-                    <span id="save-spinner" class="material-symbols-outlined animate-spin hidden mr-2" style="font-size:18px;">progress_activity</span>
+                <button type="button" id="cancel-modal-btn"
+                    class="px-6 py-2.5 rounded-full text-sm font-semibold text-gray-600 hover:bg-gray-200 transition-colors">Cancel</button>
+                <button type="button" id="save-car-btn"
+                    class="bg-primary text-white px-8 py-2.5 rounded-full text-sm font-semibold hover:bg-black transition-colors shadow-md flex items-center">
+                    <span id="save-spinner" class="material-symbols-outlined animate-spin hidden mr-2"
+                        style="font-size:18px;">progress_activity</span>
                     Save Vehicle
                 </button>
             </div>
@@ -172,21 +210,20 @@
 
     <!-- Scripts -->
     <script src="assets/js/supabase-config.js"></script>
-        <!-- Admin Mobile Menu -->
-    <div id="admin-mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[110] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <!-- Admin Mobile Menu -->
+    <div id="admin-mobile-menu"
+        class="fixed inset-0 bg-black/95 backdrop-blur-md z-[110] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
         <button id="close-admin-menu-btn" class="absolute top-6 right-6 text-white p-2">
             <span class="material-symbols-outlined text-4xl">close</span>
         </button>
         <div class="flex flex-col items-center space-y-8">
             <span id="mobile-user-email" class="text-gray-400 font-sans text-lg mb-4"></span>
-            <button id="mobile-logout-btn" class="text-white text-3xl font-bold tracking-widest uppercase hover:text-primary transition-colors underline">Logout</button>
+            <button id="mobile-logout-btn"
+                class="text-white text-3xl font-bold tracking-widest uppercase hover:text-primary transition-colors underline">Logout</button>
         </div>
     </div>
-    
+
     <script src="assets/js/admin.js"></script>
 </body>
+
 </html>
-
-
-
-
